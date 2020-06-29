@@ -17,20 +17,37 @@ export const Item = styled.div`
 
 export const Image = styled.img`
     max-width: 200px;
+    @media(max-width: 700px){
+        max-width: initial;
+    }
 `;
 
 export const Content = styled.div`
-    height: 110px;
+    height: 120px;
+
+    @media(max-width: 680px){
+        height: 130px;
+    }
 `;
 
 export const Infos = styled.div`
-    height: 53px;
+    height: 67px;
+    svg{
+        fill: red;
+    }
+    @media(max-width: 680px){
+        height: 72px;
+    }
 `;
 
 export const NameProduct = styled.p`
     color: #7A7A7A;
     font-size: 12px;
-    padding: 10px 0;
+    padding: 10px 0 0 0;
+
+    @media(max-width: 680px){
+        font-size: 10px;
+    }
 `;
 
 export const PastPrice = styled.small`
@@ -38,6 +55,10 @@ export const PastPrice = styled.small`
     font-size: 12px;
     text-decoration: line-through;
     display: ${(props) => props.disabled};
+    
+    @media(max-width: 680px){
+        font-size: 10px;
+    }
 `;
 
 export const Price = styled.p`
@@ -57,4 +78,7 @@ export const ButtonComprar = styled(BtnBlack)`
     cursor: pointer;
     opacity: 0;
     transition: .3s ease-in-out;
+    @media(max-width: 700px){
+        opacity: 1;
+    }
 `;

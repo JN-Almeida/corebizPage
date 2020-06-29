@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 import apiNews from '../../services/apiNews';
@@ -14,17 +14,20 @@ const schema = Yup.object().shape({
 });
 
 const NewsLatter = () => {
+  const [sucess, setSucess] = useState('');
+
   async function handleSubmit(data) {
     const response = await apiNews.post('', data);
-
-    console.log(response.data.message);
+    if (response.data.message === 'Created successfully') {
+      setSucess('Email Cadastrado com Sucesso!');
+    }
   }
 
   return (
     <S.Container>
 
       <h2>Participe de nossas news com promoções e novidades!</h2>
-
+      <h5>{sucess}</h5>
       <Form schema={schema} onSubmit={handleSubmit}>
 
         <S.InputContainer>

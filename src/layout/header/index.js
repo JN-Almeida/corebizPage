@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { GrSearch } from 'react-icons/gr';
-import CardCarrinho from './cardCarrinho';
+import CardCarrinho from './cartCarrinho';
 import Logo from '../../assets/logo-preto.png';
 
 import * as S from './style';
@@ -9,7 +10,9 @@ import * as S from './style';
 const Header = () => (
   <header>
     <S.Wrapper>
-      <S.ImgLogo src={Logo} />
+      <Link to="/">
+        <S.ImgLogo src={Logo} />
+      </Link>
       <S.PesquisaContainer>
         <S.FormPesquisa>
           <input type="text" placeholder="O que está procurando?" />

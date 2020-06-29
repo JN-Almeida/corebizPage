@@ -1,16 +1,22 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
+import Routes from './routes';
 import Header from './layout/header';
 import Footer from './layout/footer';
-import Home from './pages/home';
+
+import store from './store';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Home />
-      <Footer />
-    </>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   );
 }
 

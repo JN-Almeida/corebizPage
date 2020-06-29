@@ -7,6 +7,11 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media(max-width: 800px){
+        position: relative;
+        padding-bottom: 50px;
+    }
     
 `;
 
@@ -28,6 +33,24 @@ export const FormPesquisa = styled.form`
         cursor: pointer;
         border: none;
         background: transparent;
+    }
+    
+    @media(max-width: 1130px){
+        input{
+            width: 410px;
+        }
+    }
 
+    @media(max-width: 800px){
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 70px;
+        margin: 0 30px;
+        display: flex;
+        
+        input{
+            width: 100%;
+        }
     }
 `;

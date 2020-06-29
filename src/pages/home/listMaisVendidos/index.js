@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux'
 import ListItem from '../../../components/listItem';
 
 import * as S from './style';
@@ -9,29 +9,37 @@ import api from '../../../services/api';
 class listMaisVendidos extends Component {
   state= {
       products: [],
-      idProductsCompra: [],
+      productsCompra: [],
   }
-
+  
   async componentDidMount() {
     const response = await api.get('');
-
+    
     this.setState({ products: response.data})
     
-    const idProductsCompra = localStorage.getItem('idProductsCompra')
-    if (idProductsCompra) {
-      this.setState({ idProductsCompra: JSON.parse(idProductsCompra)})
+    const productsCompra = localStorage.getItem('productsCompra')
+    if (productsCompra) {
+      this.setState({ productsCompra: JSON.parse(productsCompra)})
+
     }
     
   }
-
+  
   componentDidUpdate(_, prevState ){
-    if (prevState.idProductsCompra !== this.state.idProductsCompra) {
-      localStorage.setItem('idProductsCompra', JSON.stringify(this.state.idProductsCompra))
+    if (prevState.productsCompra !== this.state.productsCompra) {
+
+      localStorage.setItem('productsCompra', JSON.stringify(this.state.productsCompra))
     }
   }
   
-  handleCompraItem = e => {
-    this.setState({ idProductsCompra: [ ...this.state.idProductsCompra, e.productId ] })
+  handleCompraItem = product => {
+    this.setState({ productsCompra: [ ...this.state.productsCompra, product ] })
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'ADD_CART',
+      product,
+    })
     //CardCarrinho.constructor('teste')
   }
 
@@ -41,6 +49,8 @@ class listMaisVendidos extends Component {
     return (
       <S.ListContainer>
         <h3>Mais Vendidos</h3>
+        <hr />
+        
         <S.List>
 
             {products.map(product => {
@@ -49,7 +59,7 @@ class listMaisVendidos extends Component {
                     key={product.productId}
                     name={product.productName}
                     image={product.imageUrl}
-                    starts ={product.stars}
+                    stars ={product.stars}
                     listPrice={product.listPrice}
                     price={product.price}
                     installmentsQuantity={product.installments.map(item => (item.quantity ))}
@@ -64,4 +74,4 @@ class listMaisVendidos extends Component {
   }
 }
 
-export default listMaisVendidos;
+export default connect()(listMaisVendidos);

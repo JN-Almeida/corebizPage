@@ -14,6 +14,11 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media(max-width: 700px){
+        flex-direction: column;
+        align-items: initial;
+    }
 `;
 
 export const Location = styled.div`
@@ -29,10 +34,18 @@ export const Location = styled.div`
         margin-top: 10px;
         font-size: 13px;
     }
+    
+    @media(max-width: 700px){
+        margin-bottom: 30px
+    }
 `;
 
 export const Contact = styled.div`
-
+    @media(max-width: 700px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const Button = styled(BtnWhite)`
@@ -59,6 +72,11 @@ export const Sign = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+
+    @media(max-width: 700px){
+        align-self: center;
+        grid-gap: 50px;
+    }
 `;
 
 export const Logo = styled.a`

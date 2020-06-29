@@ -10,6 +10,10 @@ export const Container = styled.section`
         font-size: 22px;
         margin-bottom: 20px;
     }
+    h5{
+        color: #008000;
+        margin-bottom: 20px;
+    }
     form{
         display: flex;
         justify-content: center;
@@ -19,6 +23,14 @@ export const Container = styled.section`
             margin-right: 10px;
             font-size: 12px;
             display: block
+        }
+
+        @media(max-width: 800px){
+            flex-direction: column;
+            align-items: center;
+            input{
+                margin-bottom: 30px;
+            }
         }
     }
 
