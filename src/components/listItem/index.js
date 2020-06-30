@@ -62,6 +62,7 @@ ListItem.defaultProps = {
   listPrice: ' ',
   installmentsQuantity: ' ',
   installmentsValue: ' ',
+  valueButton: ' ',
 };
 
 ListItem.propTypes = {
@@ -69,6 +70,9 @@ ListItem.propTypes = {
   image: PropTypes.string.isRequired,
   listPrice: PropTypes.number,
   price: PropTypes.number.isRequired,
+  stars: PropTypes.number.isRequired,
+  valueButton: PropTypes.string,
+  button: PropTypes.func.isRequired,
   installmentsQuantity: PropTypes.array,
   installmentsValue: PropTypes.array,
 };

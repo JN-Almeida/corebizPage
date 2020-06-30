@@ -9,6 +9,7 @@ export const MinhaConta = styled.a`
     align-items: center;
     justify-content: space-between;
     margin-right: 15px;
+    cursor: pointer;
     span{
         color: #7A7A7A;
         margin-left: 5px;

@@ -47,14 +47,14 @@ const footer = () => (
       </S.Contact>
 
       <S.Sign>
-        <S.Logo href="https://www.corebiz.ag/" targe="_blank">
+        <a href="/" targe="_blank">
           <p>Created by</p>
           <LogoCorebiz />
-        </S.Logo>
-        <S.Logo href="https://www.corebiz.ag/">
+        </a>
+        <a href="/" targe="_blank">
           <p>Powered by</p>
           <LogoVtex />
-        </S.Logo>
+        </a>
       </S.Sign>
 
     </S.Wrapper>

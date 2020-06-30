@@ -73,13 +73,7 @@ export const Sign = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 
-    @media(max-width: 700px){
-        align-self: center;
-        grid-gap: 50px;
-    }
-`;
 
-export const Logo = styled.a`
     p{
         font-size: 10px;
         font-weight: normal;
@@ -91,4 +85,8 @@ export const Logo = styled.a`
         }
     }
     
+    @media(max-width: 700px){
+        align-self: center;
+        grid-gap: 50px;
+    }
 `;
