@@ -7,6 +7,7 @@ export const Item = styled.div`
     text-align: center;
     transition: .3s ease-in-out;
     padding-bottom: 20px;
+    position: relative;
     &:hover{
         background-color: #E6E8EA;
         a{
@@ -16,9 +17,23 @@ export const Item = styled.div`
 `;
 
 export const Image = styled.img`
-    max-width: 200px;
+    max-width: 250px;
     @media(max-width: 700px){
         max-width: initial;
+    }
+`;
+
+export const Off = styled.img`
+    position: absolute;
+    top: 0;
+    right: 0; 
+    width: 70px;
+    height: 70px;
+    display: ${(props) => props.disabled};
+
+    @media(max-width: 600px){
+        width: 50px;
+        height: 50px;
     }
 `;
 

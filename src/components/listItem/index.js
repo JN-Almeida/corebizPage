@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import OffSvg from '../../assets/off.svg';
 
 import * as S from './style';
 
 const ListItem = ({
-  name, image, listPrice, price, installmentsQuantity, installmentsValue, button, stars,
+  name, image, listPrice, price, installmentsQuantity, installmentsValue, button, stars, valueButton,
 }) => {
   const starsNumber = [];
   for (let i = 0; i < 5; i++) {
     starsNumber.push(i);
   }
   function renderStars(e) {
-    console.log(e);
     if (e < stars) {
       return <AiFillStar key={e} size={10} />;
     }
@@ -23,6 +23,7 @@ const ListItem = ({
   return (
     <S.Item>
       <S.Image src={image} />
+      <S.Off src={OffSvg} disabled={listPrice ? '' : 'none'} />
       <S.Content>
         <S.Infos>
 
@@ -52,7 +53,7 @@ const ListItem = ({
         </S.Installments>
       </S.Content>
 
-      <S.ButtonComprar onClick={button}>Comprar</S.ButtonComprar>
+      <S.ButtonComprar onClick={button}>{valueButton}</S.ButtonComprar>
     </S.Item>
   );
 };

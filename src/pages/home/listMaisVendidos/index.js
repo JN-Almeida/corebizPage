@@ -65,6 +65,7 @@ class listMaisVendidos extends Component {
                     installmentsQuantity={product.installments.map(item => (item.quantity ))}
                     installmentsValue={product.installments.map(item => (item.value ))}
                     button={() => this.handleCompraItem(product)}
+                    valueButton="Comprar"
                     />
                     )
             })}

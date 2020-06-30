@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  global.SC_DISABLE_SPEEDY = true
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Nunito:wght@200;300;400;600;700&display=swap');
 
   * {
@@ -11,10 +12,14 @@ const GlobalStyles = createGlobalStyle`
     background-color: #ffffff;
     font-family: 'Nunito', sans-serif;
     letter-spacing: -.5px;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
+
+    > div{
+
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   html, body, div, span, applet, object, iframe,

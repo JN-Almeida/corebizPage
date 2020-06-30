@@ -14,6 +14,10 @@ export const MinhaConta = styled.a`
         margin-left: 5px;
         font-size: 13px;
     }
+
+    @media(max-width: 400px){
+        display: none;
+    }
 `;
 
 export const CarrinhoCompra = styled.div`
